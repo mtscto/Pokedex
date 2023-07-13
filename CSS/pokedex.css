@@ -1,0 +1,259 @@
+/* Pokemons Background Color  */
+
+.normal {
+    background: linear-gradient(15deg, #a6a877, #ac8057, #994833, #949b53);
+    background-size: 500%;
+    -webkit-animation: animaFundo 15s ease infinite;
+    -moz-animation: animaFundo 15s ease infinite;
+    animation: animaFundo 15s ease infinite;
+}
+
+.grass {
+    background: linear-gradient(15deg, #01644d, #49d0b0, #5fda92, #15c99f);
+    background-size: 500%;
+    -webkit-animation: animaFundo 15s ease infinite;
+    -moz-animation: animaFundo 15s ease infinite;
+    animation: animaFundo 15s ease infinite;
+
+}
+
+.fire {
+    background: linear-gradient(15deg, #d42727, #810909, #ff1818, #ff5e5e, #640000);
+    background-size: 500%;
+    -webkit-animation: animaFundo 15s ease infinite;
+    -moz-animation: animaFundo 15s ease infinite;
+    animation: animaFundo 15s ease infinite;
+}
+
+.water {
+    background: linear-gradient(15deg, #6aace5, #6a7ce5, #28538b, #8f6ae5);
+    background-size: 500%;
+    -webkit-animation: animaFundo 15s ease infinite;
+    -moz-animation: animaFundo 15s ease infinite;
+    animation: animaFundo 15s ease infinite;
+}
+
+.electric {
+    background: linear-gradient(15deg, #ffde58, #ffd000, #f7672e, #f7cf2e);
+    background-size: 500%;
+    -webkit-animation: animaFundo 15s ease infinite;
+    -moz-animation: animaFundo 15s ease infinite;
+    animation: animaFundo 15s ease infinite;
+
+}
+
+.ice {
+    background: linear-gradient(15deg, #98d5d7, #44adb1, #39468f, #988ada);
+    background-size: 500%;
+    -webkit-animation: animaFundo 15s ease infinite;
+    -moz-animation: animaFundo 15s ease infinite;
+    animation: animaFundo 15s ease infinite;
+}
+
+.ground {
+    background: linear-gradient(15deg, #8b6c17, #dfbf69, #42220c, #dfbf69);
+    background-size: 500%;
+    -webkit-animation: animaFundo 15s ease infinite;
+    -moz-animation: animaFundo 15s ease infinite;
+    animation: animaFundo 15s ease infinite;
+}
+
+.flying {
+    background: linear-gradient(15deg, #723fff, #a98ff0, #e08ff0, #a98ff0);
+    background-size: 500%;
+    -webkit-animation: animaFundo 15s ease infinite;
+    -moz-animation: animaFundo 15s ease infinite;
+    animation: animaFundo 15s ease infinite;
+}
+
+.poison {
+    background: linear-gradient(15deg, #d652d6, #4d024d, #5c005c, #b939b9);
+    background-size: 500%;
+    -webkit-animation: animaFundo 15s ease infinite;
+    -moz-animation: animaFundo 15s ease infinite;
+    animation: animaFundo 15s ease infinite;
+}
+
+.fighting {
+    background: linear-gradient(15deg, #ec4f69, #350012, #aa4362, #fd9691);
+    background-size: 500%;
+    -webkit-animation: animaFundo 15s ease infinite;
+    -moz-animation: animaFundo 15s ease infinite;
+    animation: animaFundo 15s ease infinite;
+}
+
+.psychic {
+    background: linear-gradient(15deg, #faaec5, #ca7fc0, #f51d5e, #f65687);
+    background-size: 500%;
+    -webkit-animation: animaFundo 15s ease infinite;
+    -moz-animation: animaFundo 15s ease infinite;
+    animation: animaFundo 15s ease infinite;
+}
+
+.dark {
+    background: linear-gradient(15deg, #ada6a6, #000000, #616161, #9b9591);
+    background-size: 500%;
+    -webkit-animation: animaFundo 15s ease infinite;
+    -moz-animation: animaFundo 15s ease infinite;
+    animation: animaFundo 15s ease infinite;
+}
+
+.rock {
+    background: linear-gradient(15deg, #362413, #554c23, #0a0807, #b8a137);
+    background-size: 500%;
+    -webkit-animation: animaFundo 15s ease infinite;
+    -moz-animation: animaFundo 15s ease infinite;
+    animation: animaFundo 15s ease infinite;
+}
+
+.bug {
+    background: linear-gradient(15deg, #a8b720, #4bb720, #b79420, #a8b720);
+    background-size: 500%;
+    -webkit-animation: animaFundo 15s ease infinite;
+    -moz-animation: animaFundo 15s ease infinite;
+    animation: animaFundo 15s ease infinite;
+}
+
+.ghost {
+    background: linear-gradient(15deg, #6e5896, #23143d, #8d53f8, #6e5896);
+    background-size: 500%;
+    -webkit-animation: animaFundo 15s ease infinite;
+    -moz-animation: animaFundo 15s ease infinite;
+    animation: animaFundo 15s ease infinite;
+}
+
+.steel {
+    background: linear-gradient(15deg, #b9b7cf, #d7cada, #87868d, #b9b7cf);
+    background-size: 500%;
+    -webkit-animation: animaFundo 15s ease infinite;
+    -moz-animation: animaFundo 15s ease infinite;
+    animation: animaFundo 15s ease infinite;
+}
+
+.dragon {
+    background: linear-gradient(15deg, #6f38f6, #3f0dbd, #54008b, #6f38f6);
+    background-size: 500%;
+    -webkit-animation: animaFundo 15s ease infinite;
+    -moz-animation: animaFundo 15s ease infinite;
+    animation: animaFundo 15s ease infinite;
+}
+
+.fairy {
+    background: linear-gradient(15deg, #ff3e7e, #ff9bbc, #ffa3c2, #ff1c67);
+    background-size: 500%;
+    -webkit-animation: animaFundo 10s ease infinite;
+    -moz-animation: animaFundo 10s ease infinite;
+    animation: animaFundo 10s ease infinite;
+}
+
+/* Background Animation */
+
+@-webkit-keyframes animaFundo {
+    0% {
+        background-position: 0% 20%
+    }
+
+    50% {
+        background-position: 50% 20%
+    }
+
+    100% {
+        background-position: 0% 20%
+    }
+}
+
+@keyframes animaFundo {
+    0% {
+        background-position: 0% 20%
+    }
+
+    50% {
+        background-position: 50% 20%
+    }
+
+    100% {
+        background-position: 0% 20%
+    }
+}
+
+/* Pokemon Details */
+
+.poke-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10px;
+    cursor: pointer;
+    transition: 0.3s all linear;
+}
+
+.poke-btn:hover {
+    transform: scale(1.1);
+    transition: 0.3s all linear;
+}
+
+.more-container{
+    display: none;
+    align-items: center;
+    justify-content: center;
+}
+.more-container.show-container{
+    display: flex;
+}
+
+.more-page{
+    display: flex;
+    flex-direction: column;
+}
+
+.number-mp {
+    color: #000;
+    opacity: 0.3;
+    text-align: right;
+    font-size: 1rem;
+}
+
+.name-mp {
+    font-size: 1.5rem;
+    display: flex;
+    margin: 0.25rem 0;
+    text-transform: capitalize;
+    align-items: center;
+    justify-content: center;
+}
+
+.detail-mp {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin-block: 0.5rem;
+}
+
+
+
+
+
+.types-mp .type-mp {
+    display: inline;
+    filter: brightness(1.1);
+    padding: 0.25rem 0.5rem;
+    margin: 0.25rem 0;
+    font-size: 0.800rem;
+    border-radius: 1rem;
+    text-align: center;
+    text-transform: capitalize;
+}
+
+.poke-img {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.poke-img img {
+    text-shadow: 1px black;
+    width: 150px;
+    height: 150px;
+    margin: 0.5rem;
+    filter: drop-shadow(0 0 0.25rem #4d2d33);
+}
