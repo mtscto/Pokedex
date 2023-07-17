@@ -167,6 +167,29 @@ body {
     background: #6c79dbcb;
     transition: 0.3s all linear;
 }
+
+.pokemon-btn{
+    position: relative;
+    bottom: -3%;
+    left: 28%;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    width: 6.5rem;
+    height: 2.4rem;
+    background: none;
+    border: none;
+    border-radius: 10px;
+    padding: 0px;
+    color: #fff;
+    font-size: 0.938rem;
+    transition: 0.3s all linear;
+}
+.pokemon-btn:hover{
+    transform: scale(1.1);
+    transition: 0.3s all linear;
+}
+
 /* Pokemons Config */
 .content .closeButton, .config #btn-pokedetails, #config-id {
     display: none;

@@ -37,7 +37,7 @@ function convertPokemonToLi(pokemon) {
                 <li class="stats-li">SPD</li> <li>${pokemon.speed}</li> <li class="poke-bar" ><div class="bar-spd bar" style="width: ${pokemon.speed}%">&nbsp;</div></li>
             </ul>
 
-            <div class="pokemon-btn" id="btn-pokedetails">More details</div>
+            <button class="pokemon-btn" id="btn-pokedetails">More details</button>
             <button type="button" class="close-btn" id="closeBtn">X</button>  
         </li>
     `
