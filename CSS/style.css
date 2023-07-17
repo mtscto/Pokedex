@@ -16,6 +16,15 @@
     --bg-color: #ffffff;
 }
 
+html::-webkit-scrollbar {
+    width: 0.4rem;
+    background: transparent;
+}
+
+html::-webkit-scrollbar-thumb {
+    background: #3173b8;
+}
+
 li {
     list-style: none;
 }
@@ -28,6 +37,7 @@ body {
     background-image: url(/img/scenary.png);
     background-attachment: fixed;
     background-size: cover;
+    
 }
 
 /* Poke Container */
@@ -119,6 +129,9 @@ body {
 }
 
 #loadMoreButton {
+    position: fixed;
+    bottom: 2%;
+    left: 48%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -576,8 +589,7 @@ button#closeBtn {
 
 @media(min-width:1010px) {
     .poke-container {
-        margin: 0 auto;
-        padding: 10px;
+        margin-left: 9%;
     }
 
     .pokemons {

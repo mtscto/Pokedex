@@ -29,7 +29,6 @@
 
 <body>
     <!-- Pokemons List -->
-
     <section class="poke-container" id="home">
         <a href="#home">
             <h1 class="backg">Pokedex</h1>
@@ -40,28 +39,29 @@
 
         </ol>
 
+        <!-- Button Up Page -->
+        <div class="back-up">
+            <a href="#home">
+                <i class='bx bx-upvote'></i>
+            </a>
+        </div>
+
+        <!-- Button Pagination -->
+        <div class="pagination">
+            <button type="button" id="loadMoreButton">More<i class='bx bx-downvote'></i></button>
+        </div>
+
         <!-- Pokemons Config -->
         <div class="config" id="config-id">
             <div id="configpoke">More Details</div>
         </div>
 
     </section>
-    <!-- Button Up Page -->
-    <div class="back-up">
-        <a href="#home">
-            <i class='bx bx-upvote'></i>
-        </a>
-    </div>
-    <!-- Button Pagination -->
-    <div class="pagination">
-        <button type="button" id="loadMoreButton">More<i class='bx bx-downvote'></i></button>
-    </div>
-    
+
     <!-- Link JS -->
     <script src="./JS/pokemon-model.js"></script>
     <script src="./JS/poke-api.js"></script>
     <script src="./JS/main.js"></script>
-
 </body>
 
 </html>
