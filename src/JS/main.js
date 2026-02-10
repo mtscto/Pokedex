@@ -1,3 +1,6 @@
+import { store } from "./state/store.js";
+import { pokeApi } from "./api/poke-api.js";
+
 /*   STATE & ELEMENTS */
 
 const pokemonList = document.getElementById("pokemonList");
@@ -7,21 +10,6 @@ const btnUp = document.querySelector(".btn-up");
 const maxRecords = 649;
 const limit = 12;
 
-let offset = 0;          // ALL pagination
-let filterPage = 0;      // FILTER pagination
-let isLoading = false;
-
-let allPokemons = [];
-let filteredPokemons = [];
-
-/* Modal Navigation state */
-
-let currentList = [];
-let currentIndex = -1;
-
-/* Current view state */
-
-let visiblePokemons = [];
 
 
 /* SEARCH */
@@ -33,7 +21,6 @@ const searchIcon = document.getElementById("searchIcon");
 const closeIcon = document.getElementById("closeIcon");
 
 let searchTimeout = null;
-let isSearching = false;
 
 /* Search */
 
@@ -49,7 +36,7 @@ searchBtn.addEventListener("click", () => {
 
   if (active) {
     searchInput.focus();
-    isSearching = true;
+    store.isSearching = true;
   } else {
     clearSearch();
   }
@@ -115,16 +102,16 @@ function removeEndMessage() {
 function resetListState() {
   removeEndMessage();
   ensureLoadMoreButton();
-  isLoading = false;
+  store.isLoading = false;
 }
 
 /* API LOAD (ALL) */
 
 function loadPokemonItems(start, amount) {
-  isLoading = true;
+  store.isLoading = true;
 
   return pokeApi.getPokemons(start, amount).then(pokemons => {
-    isLoading = false;
+    store.isLoading = false;
     return pokemons.filter(p => p.number <= maxRecords);
   });
 }
@@ -132,8 +119,8 @@ function loadPokemonItems(start, amount) {
 /* LOAD MORE (ROUTER) */
 
 function loadMorePokemons() {
-  if (isSearching) return;
-  if (isLoading) return;
+  if (store.isSearching) return;
+  if (store.isLoading) return;
 
   const btn = document.getElementById("loadMoreButton");
   btn.disabled = true;
@@ -146,12 +133,12 @@ function loadMorePokemons() {
   }
 
   // ALL
-  loadPokemonItems(offset, limit).then(pokemons => {
-    offset += pokemons.length;
+  loadPokemonItems(store.offset, limit).then(pokemons => {
+    store.offset += pokemons.length;
     appendPokemons(pokemons, true, true);
 
     // FIM DA DEX
-    if (offset >= maxRecords || pokemons.length === 0) {
+    if (store.offset >= maxRecords || pokemons.length === 0) {
       showEndMessage(); // remove botão + mostra texto
       return;
     }
@@ -165,9 +152,9 @@ function loadMorePokemons() {
 /* LOAD MORE WITH FILTER */
 
 function loadMoreWithFilter() {
-  const start = filterPage * limit;
+  const start = store.filterPage * limit;
   const end = start + limit;
-  const slice = filteredPokemons.slice(start, end);
+  const slice = store.filteredPokemons.slice(start, end);
 
   // 👉 acabou a lista
   if (slice.length === 0) {
@@ -175,13 +162,13 @@ function loadMoreWithFilter() {
     return;
   }
 
-  appendPokemons(slice, true, filterPage === 0);
-  filterPage++;
+  appendPokemons(slice, true, store.filterPage === 0);
+  store.filterPage++;
 
-  const nextStart = filterPage * limit;
+  const nextStart = store.filterPage * limit;
 
   // garante botão ativo
-  if (nextStart < filteredPokemons.length) {
+  if (nextStart < store.filteredPokemons.length) {
     ensureLoadMoreButton();
 
     const btn = document.getElementById("loadMoreButton");
@@ -198,10 +185,10 @@ function loadMoreWithFilter() {
 /* Search Functions */
 
 function ensureAllPokemonLoaded() {
-  if (allPokemons.length > 0) return Promise.resolve();
+  if (store.allPokemons.length > 0) return Promise.resolve();
 
   return pokeApi.getPokemons(0, maxRecords).then(pokemons => {
-    allPokemons = pokemons;
+    store.allPokemons = pokemons;
   });
 }
 
@@ -216,10 +203,10 @@ function handleSearch(query) {
     return;
   }
 
-  const source = allPokemons.length
-    ? allPokemons
-    : filteredPokemons.length
-      ? filteredPokemons
+  const source = store.allPokemons.length
+    ? store.allPokemons
+    : store.filteredPokemons.length
+      ? store.filteredPokemons
       : [];
 
   const results = source.filter(pokemon =>
@@ -237,7 +224,7 @@ function clearSearch() {
   searchIcon.hidden = false;
   closeIcon.hidden = true;
 
-  isSearching = false;
+  store.isSearching = false;
   restoreDefaultState();
 }
 
@@ -245,12 +232,12 @@ function restoreDefaultState() {
   pokemonList.innerHTML = "";
 
   if (isFilterActive()) {
-    filterPage = 0;
+    store.filterPage = 0;
     loadMoreWithFilter();
   } else {
-    offset = 0;
-    loadPokemonItems(offset, limit).then(pokemons => {
-      offset += pokemons.length;
+    store.offset = 0;
+    loadPokemonItems(store.offset, limit).then(pokemons => {
+      store.offset += pokemons.length;
       appendPokemons(pokemons, true, true);
       ensureLoadMoreButton();
     });
@@ -265,18 +252,18 @@ function applyFilter() {
   resetListState();
   const types = [...activeFilters];
 
-  filteredPokemons = allPokemons.filter(pokemon =>
+  store.filteredPokemons = store.allPokemons.filter(pokemon =>
     pokemon.types.some(type => types.includes(type))
   );
 
-  filterPage = 0;
+  store.filterPage = 0;
   loadMoreWithFilter();
 }
 
 /* INITIAL LOAD (ALL) */
 
-loadPokemonItems(offset, limit).then(pokemons => {
-  offset += limit;
+loadPokemonItems(store.offset, limit).then(pokemons => {
+  store.offset += limit;
   appendPokemons(pokemons, true, true);
   ensureLoadMoreButton();
 });
@@ -298,11 +285,11 @@ function animatePokemonCards() {
 
 function appendPokemons(pokemons, animate = false, reset = false) {
   if (reset) {
-    visiblePokemons = [];
+    store.visiblePokemons = [];
     pokemonList.innerHTML = "";
   }
 
-  visiblePokemons = [...visiblePokemons, ...pokemons];
+  store.visiblePokemons = [...store.visiblePokemons, ...pokemons];
 
   const fragment = document.createDocumentFragment();
 
@@ -359,12 +346,12 @@ filterButtons.forEach(button => {
       );
 
       pokemonList.innerHTML = "";
-      offset = 0;
+      store.offset = 0;
 
       ensureLoadMoreButton();
 
       loadPokemonItems(offset, limit).then(pokemons => {
-        offset += pokemons.length;
+        store.offset += pokemons.length;
         appendPokemons(pokemons, true);
       });
 
@@ -389,12 +376,12 @@ filterButtons.forEach(button => {
       allButton.classList.add("is-active");
 
       pokemonList.innerHTML = "";
-      offset = 0;
+      store.offset = 0;
 
       ensureLoadMoreButton();
 
-      loadPokemonItems(offset, limit).then(pokemons => {
-        offset += pokemons.length;
+      loadPokemonItems(store.offset, limit).then(pokemons => {
+        store.offset += pokemons.length;
         appendPokemons(pokemons, true);
       });
 
@@ -403,13 +390,13 @@ filterButtons.forEach(button => {
 
     // ===== APLICA FILTRO =====
     pokemonList.innerHTML = "";
-    filterPage = 0;
+    store.filterPage = 0;
 
     ensureLoadMoreButton();
 
-    if (allPokemons.length === 0) {
+    if (store.allPokemons.length === 0) {
       pokeApi.getPokemons(0, maxRecords).then(pokemons => {
-        allPokemons = pokemons;
+        store.allPokemons = pokemons;
         applyFilter();
       });
     } else {
@@ -427,10 +414,10 @@ function isFilterActive() {
 
 function openModal(pokemon) {
   // Define a lista ativa correta
-  currentList = visiblePokemons;
+  store.currentList = store.visiblePokemons;
 
   // Define o índice atual
-  currentIndex = currentList.findIndex(p => p.number === pokemon.number);
+  store.currentIndex = store.currentList.findIndex(p => p.number === pokemon.number);
 
   config.innerHTML = `
 
@@ -499,21 +486,21 @@ function updateModalNavButtons() {
 
   if (!prevBtn || !nextBtn) return;
 
-  prevBtn.classList.toggle("disabled", currentIndex <= 0);
-  nextBtn.classList.toggle("disabled", currentIndex >= currentList.length - 1);
+  prevBtn.classList.toggle("disabled", store.currentIndex <= 0);
+  nextBtn.classList.toggle("disabled", store.currentIndex >= store.currentList.length - 1);
 }
 
 
 function goPrevPokemon() {
-  if (currentIndex <= 0) return;
-  currentIndex--;
-  openModal(currentList[currentIndex]);
+  if (store.currentIndex <= 0) return;
+  store.currentIndex--;
+  openModal(store.currentList[store.currentIndex]);
 }
 
 function goNextPokemon() {
-  if (currentIndex >= currentList.length - 1) return;
-  currentIndex++;
-  openModal(currentList[currentIndex]);
+  if (store.currentIndex >= store.currentList.length - 1) return;
+  store.currentIndex++;
+  openModal(store.currentList[store.currentIndex]);
 }
 
 

@@ -1,0 +1,380 @@
+/* OVERLAY */
+.config {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.55);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 100;
+}
+
+/* CARD */
+.config-card {
+    width: min(420px, 92%);
+    border-radius: 1.2rem;
+    overflow: hidden;
+    color: #fff;
+    position: relative;
+    animation: scaleIn 0.25s ease;
+    box-shadow: 0 25px 68px rgba(0, 0, 0, 0.25);
+}
+
+/* ============================= */
+/* MODAL NAVIGATION (PREV / NEXT) */
+/* ============================= */
+
+
+/* POSIÇÃO */
+.modal-nav {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 50;
+}
+
+.modal-prev,
+.modal-next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 44px;
+    height: 44px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: none;
+    border-radius: 50%;
+
+    color: #2a75bb;
+    cursor: pointer;
+    pointer-events: auto;
+
+    transition:
+        background .2s ease,
+        box-shadow .2s ease,
+        transform .15s ease,
+        color .2s ease;
+}
+
+
+.modal-prev {
+    left: 16px;
+}
+
+.modal-next {
+    right: 16px;
+}
+
+
+/* SVG */
+.modal-prev svg,
+.modal-next svg {
+    width: 20px;
+    height: 20px;
+    stroke: currentColor;
+    color: #2a75bb;
+    stroke-width: 2.2;
+    fill: none;
+}
+
+
+/* HOVER */
+.modal-prev:hover,
+.modal-next:hover {
+    background: rgba(255, 255, 255, 0.95);
+    color: #1d5fa7;
+
+    box-shadow:
+        0 6px 18px rgba(0, 0, 0, 0.12),
+        0 0 0 2px rgba(42, 117, 187, 0.15);
+
+    transform: translateY(-50%) scale(1.06);
+}
+
+
+
+
+/* DISABLED */
+.modal-prev.disabled,
+.modal-next.disabled {
+    opacity: 0.3;
+    pointer-events: none;
+}
+
+/* Active */
+
+.modal-prev:active,
+.modal-next:active {
+    transform: translateY(-50%) scale(0.95);
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.18);
+}
+
+
+
+
+/* ENTRY ANIMATION */
+@keyframes scaleIn {
+    from {
+        transform: scale(0.96);
+        opacity: 0;
+    }
+
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+/* HEADER (GRADIENT AREA) */
+.config-header {
+    padding: 1.25rem 1.25rem 3.5rem;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+/* TOP ROW */
+.header-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header-top h2 {
+    text-transform: capitalize;
+    font-size: 1.6rem;
+    margin: 0;
+}
+
+/* BACK BUTTON */
+.close-btn {
+    width: 35px;
+    height: 35px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: transparent;
+    border: none;
+    border-radius: 12px;
+
+    color: #fff;
+    cursor: pointer;
+
+    transition:
+        background 0.2s ease,
+        transform 0.15s ease;
+}
+
+.close-btn svg {
+    display: block;
+    pointer-events: none;
+}
+
+.close-btn:hover {
+    background: rgba(255, 255, 255, 0.18);
+}
+
+.close-btn:active {
+    transform: translateX(-2px) scale(0.95);
+}
+
+
+/* META (TYPES + NUMBER) */
+.header-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.85rem;
+    opacity: 0.95;
+}
+
+.header-meta .types {
+    display: flex;
+    gap: 0.4rem;
+}
+
+.header-meta .type {
+    background: rgba(255, 255, 255, 0.25);
+    padding: 0.25rem 0.65rem;
+    border-radius: 999px;
+    text-transform: capitalize;
+    font-size: 0.75rem;
+}
+
+.number {
+    color: #fff;
+    text-align: right;
+    font-size: 0.8rem;
+}
+
+/* CLOUD BACKGROUND */
+.cloud-bg {
+    position: absolute;
+    left: -4px;
+    top: -72px;
+    width: 135px;
+    height: 200px;
+    background: url(/assets/img/cloud-background.png) no-repeat center;
+    background-size: contain;
+    opacity: 0.07;
+    filter: grayscale(100%);
+    pointer-events: none;
+    z-index: 0;
+}
+
+/* POKEBALL BACKGROUND */
+.pokeball-bg {
+    position: absolute;
+    right: -40px;
+    bottom: -110px;
+
+    width: 200px;
+    height: 300px;
+
+    background: url("/assets/img/pokeball-background.png") no-repeat center;
+    background-size: contain;
+
+    opacity: 0.07;
+    filter: grayscale(100%);
+
+    pointer-events: none;
+    z-index: 0;
+}
+
+
+/* POKEMON IMAGE */
+.pokemon-wrapper {
+    display: flex;
+    justify-content: center;
+    margin-top: -1.5rem;
+    margin-bottom: -70px;
+    z-index: 2;
+}
+
+.pokemon-wrapper img {
+    width: 160px;
+    height: 160px;
+    filter: drop-shadow(0 12px 22px rgba(0, 0, 0, 0.35));
+}
+
+/* BODY (WHITE AREA) */
+.config-body {
+    background: #f7f7f7;
+    color: #333;
+    padding: 2.5rem 1.25rem 1.5rem;
+    border-radius: 1.6rem 1.6rem 0 0;
+    position: relative;
+    z-index: 1;
+    box-shadow:
+        0 -10px 22px rgba(0, 0, 0, 0.1),
+        0 -2px 6px rgba(0, 0, 0, 0.06);
+}
+
+/* STATS */
+.stats {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.7rem;
+    padding: 0;
+    margin: 0;
+}
+
+/* SINGLE STAT */
+.stat {
+    display: grid;
+    grid-template-columns: 42px 1fr;
+    gap: 0.6rem;
+    align-items: center;
+    font-size: 0.85rem;
+}
+
+/* BAR */
+.poke-bar {
+    background: #ddd;
+    border-radius: 999px;
+    height: 6px;
+    overflow: hidden;
+}
+
+.bar {
+    height: 100%;
+    border-radius: inherit;
+    animation: growBar 0.8s ease;
+}
+
+@keyframes growBar {
+    from {
+        width: 0;
+    }
+}
+
+/* BAR COLORS */
+.bar-hp {
+    background: #6bcf9b;
+}
+
+.bar-atk {
+    background: #ff6b6b;
+}
+
+.bar-def {
+    background: #f4a261;
+}
+
+.bar-satk {
+    background: #e76f51;
+}
+
+.bar-sdef {
+    background: #9b5de5;
+}
+
+.bar-spd {
+    background: #4ea8de;
+}
+
+/* SAÍDA DO MODAL */
+.config.closing {
+    animation: fadeOut 0.25s ease forwards;
+}
+
+.config.closing .config-card {
+    animation: scaleOut 0.25s ease forwards;
+}
+
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+    }
+
+    to {
+        opacity: 0;
+    }
+}
+
+@keyframes scaleOut {
+    from {
+        transform: scale(1);
+        opacity: 1;
+    }
+
+    to {
+        transform: scale(0.95);
+        opacity: 0;
+    }
+}
+
+/* MOBILE*/
+@media (max-width: 768px) {
+
+    .modal-prev,
+    .modal-next {
+        display: none;
+    }
+}

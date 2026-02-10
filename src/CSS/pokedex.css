@@ -1,0 +1,72 @@
+/* pokemonmons Background Color */
+.normal {
+    background: linear-gradient(15deg, #a6a877, #ac8057, #994833);
+}
+
+.grass {
+    background: linear-gradient(15deg, #01644d, #49d0b0, #5fda92);
+}
+
+.fire {
+    background: linear-gradient(15deg, #810909, #ff4141, #810909);
+}
+
+.water {
+    background: linear-gradient(15deg, #6aace5, #6a7ce5, #28538b);
+}
+
+.electric {
+    background: linear-gradient(15deg, #ffde58, #ffd000, #f7672e);
+}
+
+.ice {
+    background: linear-gradient(15deg, #98d5d7, #44adb1, #39468f);
+}
+
+.ground {
+    background: linear-gradient(15deg, #8b6c17, #dfbf69, #42220c);
+}
+
+.flying {
+    background: linear-gradient(15deg, #723fff, #a98ff0, #e08ff0);
+}
+
+.poison {
+    background: linear-gradient(15deg, #4d024d, #d652d6, #5c005c);
+}
+
+.fighting {
+    background: linear-gradient(15deg, #ec4f69, #fd9691, #350012);
+}
+
+.psychic {
+    background: linear-gradient(15deg, #faaec5, #ca7fc0, #f65687);
+}
+
+.dark {
+    background: linear-gradient(15deg, #ada6a6, #000000, #9b9591);
+}
+
+.rock {
+    background: linear-gradient(15deg, #362413, #554c23, #b8a137);
+}
+
+.bug {
+    background: linear-gradient(15deg, #a8b720, #4bb720, #a8b720);
+}
+
+.ghost {
+    background: linear-gradient(15deg, #6e5896, #23143d, #6e5896);
+}
+
+.steel {
+    background: linear-gradient(15deg, #b9b7cf, #d7cada, #87868d);
+}
+
+.dragon {
+    background: linear-gradient(15deg, #6f38f6, #3f0dbd, #54008b);
+}
+
+.fairy {
+    background: linear-gradient(15deg, #ff3e7e, #ff9bbc, #ff1c67);
+}
