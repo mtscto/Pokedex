@@ -14,7 +14,7 @@
     width: min(420px, 92%);
     border-radius: 1.2rem;
     overflow: hidden;
-    color: #fff;
+    color: var(--main-color);
     position: relative;
     animation: scaleIn 0.25s ease;
     box-shadow: 0 25px 68px rgba(0, 0, 0, 0.25);
@@ -48,7 +48,7 @@
     border: none;
     border-radius: 50%;
 
-    color: #2a75bb;
+    color: var(--poke-main-color);
     cursor: pointer;
     pointer-events: auto;
 
@@ -75,7 +75,7 @@
     width: 20px;
     height: 20px;
     stroke: currentColor;
-    color: #2a75bb;
+    color: var(--poke-main-color);
     stroke-width: 2.2;
     fill: none;
 }
@@ -85,7 +85,7 @@
 .modal-prev:hover,
 .modal-next:hover {
     background: rgba(255, 255, 255, 0.95);
-    color: #1d5fa7;
+    color: var(--poke-main-color);
 
     box-shadow:
         0 6px 18px rgba(0, 0, 0, 0.12),
@@ -128,7 +128,7 @@
     }
 }
 
-/* HEADER (GRADIENT AREA) */
+/* HEADER */
 .config-header {
     padding: 1.25rem 1.25rem 3.5rem;
     display: flex;
@@ -162,7 +162,7 @@
     border: none;
     border-radius: 12px;
 
-    color: #fff;
+    color: var(--main-color);
     cursor: pointer;
 
     transition:
@@ -181,6 +181,13 @@
 
 .close-btn:active {
     transform: translateX(-2px) scale(0.95);
+}
+
+.close-btn:focus-visible,
+.modal-prev:focus-visible,
+.modal-next:focus-visible {
+    outline: 2px solid var(--poke-second-color);
+    outline-offset: 3px;
 }
 
 
@@ -207,7 +214,7 @@
 }
 
 .number {
-    color: #fff;
+    color: var(--main-color);
     text-align: right;
     font-size: 0.8rem;
 }
@@ -219,7 +226,7 @@
     top: -72px;
     width: 135px;
     height: 200px;
-    background: url(/assets/img/cloud-background.png) no-repeat center;
+    background: url(/src/assets/img/cloud-background.png) no-repeat center;
     background-size: contain;
     opacity: 0.07;
     filter: grayscale(100%);
@@ -236,7 +243,7 @@
     width: 200px;
     height: 300px;
 
-    background: url("/assets/img/pokeball-background.png") no-repeat center;
+    background: url(/src/assets/img/pokeball-background.png) no-repeat center;
     background-size: contain;
 
     opacity: 0.07;
@@ -254,6 +261,12 @@
     margin-top: -1.5rem;
     margin-bottom: -70px;
     z-index: 2;
+}
+
+.pokemon-wrapper .pixel {
+    margin-top: 1.5rem;
+    margin-bottom: 5px;
+    filter: contrast(1.2) saturate(0.7) hue-rotate(20deg);
 }
 
 .pokemon-wrapper img {
@@ -367,14 +380,5 @@
     to {
         transform: scale(0.95);
         opacity: 0;
-    }
-}
-
-/* MOBILE*/
-@media (max-width: 768px) {
-
-    .modal-prev,
-    .modal-next {
-        display: none;
     }
 }

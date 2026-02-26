@@ -12,11 +12,14 @@ function convertPokeApiDetailToPokemon(pokeDetail) {
     pokemon.types = types
     pokemon.type = type
     pokemon.sprites = {
-        dream: pokeDetail.sprites.other.dream_world.front_default,
-        official: pokeDetail.sprites.other["official-artwork"].front_default,
-        pixel: pokeDetail.sprites.other.front_default
+        dream: pokeDetail.sprites?.other?.dream_world?.front_default,
+        official: pokeDetail.sprites?.other?.["official-artwork"]?.front_default,
+        pixel: pokeDetail.sprites?.front_default
     }
-    pokemon.photo = pokeDetail.sprites.other.dream_world.front_default
+    pokemon.photo =
+        pokemon.sprites.dream ||
+        pokemon.sprites.official ||
+        pokemon.sprites.pixel;
     pokemon.hp = pokeDetail.stats[0].base_stat
     pokemon.atk = pokeDetail.stats[1].base_stat
     pokemon.def = pokeDetail.stats[2].base_stat
@@ -27,10 +30,10 @@ function convertPokeApiDetailToPokemon(pokeDetail) {
     return pokemon
 }
 
-function getPokemonDetail(pokemon) {
-    return fetch(pokemon.url)
-        .then((response) => response.json())
-        .then(convertPokeApiDetailToPokemon)
+async function getPokemonDetail(pokemon) {
+    const response = await fetch(pokemon.url);
+    const json = await response.json();
+    return convertPokeApiDetailToPokemon(json);
 }
 
 function getPokemons(offset = 0, limit = 12) {
@@ -42,7 +45,7 @@ function getPokemons(offset = 0, limit = 12) {
         .then(pokemons => {
             // resolve detalhes UM POR UM, tolerando falhas
             const detailPromises = pokemons.map(pokemon =>
-                pokeApi.getPokemonDetail(pokemon)
+                getPokemonDetail(pokemon)
                     .catch(err => {
                         console.warn("Falha ao carregar:", pokemon.name);
                         return null; // não quebra o fluxo

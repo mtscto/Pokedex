@@ -4,8 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="./img/pngegg.png">
-    <title>Pokedex</title>
+    <link rel="icon" type="image/svg+xml" href="./assets/icons/premierball.svg">
+    <title>Pokedex | Vanilla JS App</title>
 
     <!-- Boxicons -->
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
@@ -24,14 +24,13 @@
 
 
     <!-- Link CSS -->
-    <link rel="stylesheet" href="/src/CSS/style.css">
-    <link rel="stylesheet" href="/src//CSS/pokedex.css">
-    <link rel="stylesheet" href="/src/CSS/modal.css">
+    <link rel="stylesheet" href="./CSS/main.css">
 
 </head>
 
 <body>
     <!-- Nav Bar -->
+
     <header class="navbar">
         <button class="nav-btn" id="openFilters" aria-label="Menu">
             <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
@@ -71,7 +70,13 @@
     <aside class="filters" id="filters">
         <div class="filters-header">
             <h2>Configs</h2>
-            <button class="filters-close" aria-label="Fechar">×</button>
+            <button class="filters-close" aria-label="Close filters" type="button">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="18" y1="6" x2="6" y2="18" />
+                    <line x1="6" y1="6" x2="18" y2="18" />
+                </svg>
+            </button>
         </div>
 
         <!-- VIEW MODE -->
@@ -130,8 +135,11 @@
         </ol>
 
         <!-- Button Up Page -->
-        <button class="btn-up" aria-label="Voltar ao topo">
-            <i class="bx bx-chevron-up"></i>
+        <button class="btn-up" aria-label="Back to top" type="button">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="18 15 12 9 6 15"></polyline>
+            </svg>
         </button>
 
 

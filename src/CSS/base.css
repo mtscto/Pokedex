@@ -1,0 +1,147 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@font-face {
+    font-family: 'pokemonSolid';
+    src: url("/src/assets/fonts/PokemonSolid.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* Default Config */
+
+:root {
+    --main-color: #ffffff;
+    --body-color: #f5f5f5;
+    --contains-color: #102920;
+    --heading-color: #22312b;
+    --box-color: #0d2622;
+    --bg-color: #ffffff;
+    --glass-bg: rgba(255, 255, 255, 0.18);
+    --glass-border: rgba(255, 255, 255, 0.35);
+    --glass-shadow: 0 12px 30px rgba(0, 0, 0, 0.18);
+    --main-gradient: linear-gradient(90deg,
+            #6bcf9b,
+            #4ea8de,
+            #9b5de5);
+    --accent-gradient: linear-gradient(90deg,
+            #fe3b3b,
+            #de4eac,
+            #9b5de5);
+    --poke-main-color: #2a75bb;
+    --poke-second-color: #ffcb05;
+}
+
+/* Scrollbar */
+
+/* Chrome, Edge, Safari */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(180deg,
+            rgba(120, 120, 120, 0.35),
+            rgba(120, 120, 120, 0.55));
+    border-radius: 999px;
+    border: 2px solid rgba(255, 255, 255, 0.6);
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(180deg,
+            rgba(120, 120, 120, 0.55),
+            rgba(120, 120, 120, 0.75));
+}
+
+/* Firefox */
+* {
+    scrollbar-width: thin;
+    scrollbar-color: rgba(120, 120, 120, 0.55) transparent;
+}
+
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+body {
+    background: radial-gradient(circle at top left,
+            rgba(0, 0, 0, 0.03),
+            transparent 40%),
+        #f7f7f5;
+    font-family: 'Nunito', sans-serif;
+}
+
+/* Responsive */
+
+@media (prefers-reduced-motion: reduce) {
+    .pokemon {
+        opacity: 1;
+        transform: none;
+        transition: none;
+    }
+}
+
+/* Skeleton */
+
+.pokemon.skeleton {
+    opacity: 1;
+    transform: none;
+    transition: none;
+    background: var(--main-color);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+}
+
+.skeleton-box {
+    height: 16px;
+    width: 60%;
+    border-radius: 8px;
+}
+
+.pokemon.skeleton .skeleton-pill {
+    height: 10px;
+    width: 40px;
+    border-radius: 20px;
+    background: linear-gradient(90deg,
+            #e3e3e3 25%,
+            #eaeaea 37%,
+            #e3e3e3 63%);
+    background-size: 400% 100%;
+    animation: shimmer 1.2s ease-in-out infinite;
+}
+
+.skeleton-image {
+    width: 100%;
+    height: 96px;
+    border-radius: 12px;
+}
+
+.skeleton-box,
+.skeleton-image {
+    background: linear-gradient(90deg,
+            #e3e3e3 25%,
+            #eaeaea 37%,
+            #e3e3e3 63%);
+    background-size: 400% 100%;
+    animation: shimmer 1.2s ease-in-out infinite;
+}
+
+@keyframes shimmer {
+    0% {
+        background-position: 100% 0;
+    }
+
+    100% {
+        background-position: 0 0;
+    }
+}

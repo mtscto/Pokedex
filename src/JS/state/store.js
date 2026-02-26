@@ -1,23 +1,21 @@
+import { LIMIT } from "../config/app-config.js"
+
 // store.js
-
 export const store = {
-    //pagination
-    offset: 0,
-    filterPage: 0,
-    isLoading: false,
-
-    //data
+    // data base
     allPokemons: [],
-    filteredPokemons: [],
     visiblePokemons: [],
 
-    // modal
-    currentList: [],
-    currentIndex: -1,
+    //query state
+    searchQuery: "",
+    activeFilters: new Set(["all"]),
+    currentPage: 1,
+    pageSize: LIMIT,
 
-    // search
-    isSearching: false,
+    // modal
+    currentIndex: -1,
+    currentList: [],
 
     // view
-    currentViewMode: "dream"
+    currentViewMode: "dream",
 };
