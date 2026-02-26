@@ -1,28 +1,25 @@
-⸻
 
-🧩 Pokédex — Vanilla JS Application
+## 🧩 Pokédex — Vanilla JS Application
 
 Aplicação web construída com JavaScript puro (ES6+), consumindo a PokéAPI, com arquitetura modular, controle de estado centralizado e renderização dinâmica orientada a performance.
 
 🔗 Live Demo
 https://pokedex-lake-delta.vercel.app
 
-⸻
 
-📌 Objetivo do Projeto
+## 📌 Objetivo do Projeto
 
 Este projeto foi desenvolvido com foco em:
-	•	Organização e escalabilidade
-	•	Separação clara de responsabilidades
-	•	Gerenciamento de estado sem frameworks
-	•	Estrutura modular
-	•	Experiência de usuário fluida
+- Organização e escalabilidade
+- Separação clara de responsabilidades
+- Gerenciamento de estado sem frameworks
+- Estrutura modular
+- Experiência de usuário fluida
 
 A proposta foi construir uma aplicação completa utilizando apenas JavaScript Vanilla, simulando responsabilidades que normalmente seriam delegadas a frameworks.
 
-⸻
 
-⚙️ Funcionalidades
+## ⚙️ Funcionalidades
 	•	🔍 Busca por nome ou número
 	•	🎛 Filtro por tipo
 	•	📄 Paginação incremental (Load More)
@@ -32,9 +29,8 @@ A proposta foi construir uma aplicação completa utilizando apenas JavaScript V
 	•	🎬 Animação progressiva de cards
 	•	🧠 Estado global centralizado
 
-⸻
 
-🧱 Arquitetura
+## 🧱 Arquitetura
 
 O projeto foi organizado em módulos independentes, cada um com responsabilidade bem definida:
 
@@ -47,7 +43,7 @@ O projeto foi organizado em módulos independentes, cada um com responsabilidade
 
 Essa separação reduz acoplamento, melhora legibilidade e facilita manutenção.
 
-🔹 Gerenciamento de Estado
+## 🔹 Gerenciamento de Estado
 
 Um store centraliza:
 	•	Lista completa de dados
@@ -59,18 +55,16 @@ Um store centraliza:
 
 Isso evita dependências cruzadas e facilita manutenção.
 
-⸻
 
-🔹 Separação de Responsabilidades
+## 🔹 Separação de Responsabilidades
 	•	Renderização não manipula estado.
 	•	Estado não manipula DOM.
 	•	UI não contém regra de negócio.
 
 Essa divisão torna o projeto previsível e escalável.
 
-⸻
 
-🛠 Tecnologias
+## 🛠 Tecnologias
 	•	HTML5
 	•	CSS3 modularizado
 	•	JavaScript ES6+
@@ -78,27 +72,24 @@ Essa divisão torna o projeto previsível e escalável.
 	•	PokéAPI
 	•	Vercel (Deploy)
 
-⸻
 
-📈 Pontos Técnicos Trabalhados
+## 📈 Pontos Técnicos Trabalhados
 	•	Manipulação performática de DOM (DocumentFragment)
 	•	Controle manual de estado (sem frameworks)
 	•	Estrutura modular baseada em responsabilidade
 	•	Tratamento de erros na camada de API
 	•	Deploy em ambiente real com debug de rede
 
-⸻
 
-🚀 Próximos Passos
+## 🚀 Próximos Passos
 	•	Implementação de testes unitários
 	•	Otimização de carregamento (lazy loading)
 	•	Refatoração para arquitetura baseada em componentes
 
-⸻
 
-👨‍💻 Autor
+## 👨‍💻 Autor
 
 Matheus Tavares
 Desenvolvedor Full Stack
 
-⸻
+## 
