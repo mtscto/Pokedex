@@ -36,15 +36,16 @@ A proposta foi construir uma aplicação completa utilizando apenas JavaScript V
 
 🧱 Arquitetura
 
-O projeto foi estruturado em módulos independentes:
+O projeto foi organizado em módulos independentes, cada um com responsabilidade bem definida:
 
-JS/
- ├── api/        → comunicação com a PokéAPI
- ├── state/      → gerenciamento de estado global
- ├── pokemon/    → renderização e animações
- ├── list/       → controle de paginação, busca e filtros
- ├── modal/      → lógica de navegação e exibição
- ├── ui/         → interações de interface
+- **api/** → comunicação com a PokéAPI  
+- **state/** → gerenciamento de estado global  
+- **pokemon/** → renderização de cards e animações  
+- **list/** → paginação, busca e filtros  
+- **modal/** → navegação e exibição detalhada  
+- **ui/** → interações de interface  
+
+Essa separação reduz acoplamento, melhora legibilidade e facilita manutenção.
 
 🔹 Gerenciamento de Estado
 
