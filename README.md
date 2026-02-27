@@ -1,95 +1,111 @@
-
 ## 🧩 Pokédex — Vanilla JS Application
+<br>
+Web application built with pure JavaScript (ES6+), consuming the PokéAPI, structured with a modular architecture and manual state management, simulating responsibilities typically handled by modern frameworks.
 
-Aplicação web construída com JavaScript puro (ES6+), consumindo a PokéAPI, com arquitetura modular, controle de estado centralizado e renderização dinâmica orientada a performance.
-
-🔗 Live Demo
+🔗 **Live Demo:**
 https://pokedex-lake-delta.vercel.app
 
 
-## 📌 Objetivo do Projeto
+## 🎥 Preview
 
-Este projeto foi desenvolvido com foco em:
-- Organização e escalabilidade
-- Separação clara de responsabilidades
-- Gerenciamento de estado sem frameworks
-- Estrutura modular
-- Experiência de usuário fluida
+<p align="center">
+  <img src="src/assets/img/gif-pokedex.gif" width="700">
+</p>
 
-A proposta foi construir uma aplicação completa utilizando apenas JavaScript Vanilla, simulando responsabilidades que normalmente seriam delegadas a frameworks.
+<br>
+##📸 Interface Overview
+
+<p align="center">
+  <img src="src/assets/img/pokedex-view.png" width="48%">
+  <img src="src/assets/img/pokedex-modal.png" width="48%">
+</p>
+
+<br>
+
+## 📌 Project Objective
+
+This project was developed with a strong focus on:
+	•	Organization and scalability
+	•	Clear separation of responsibilities
+	•	Framework-free state management
+	•	Modular architecture
+	•	Smooth and intuitive user experience
+
+The goal was to build a complete application using only Vanilla JavaScript, reproducing architectural patterns commonly delegated to frameworks.
 
 
-## ⚙️ Funcionalidades
-	•	🔍 Busca por nome ou número
-	•	🎛 Filtro por tipo
-	•	📄 Paginação incremental (Load More)
-	•	🎨 Alternância de visualização de sprites
-	•	📱 Modal com navegação (botões, teclado e swipe)
+## ⚙️ Features
+	•	🔍 Search by name or number
+	•	🎛 Filter by type
+	•	📄 Incremental pagination (Load More)
+	•	🎨 Sprite view toggle
+	•	📱 Modal navigation (buttons, keyboard, and swipe)
 	•	⚡ Skeleton loading
-	•	🎬 Animação progressiva de cards
-	•	🧠 Estado global centralizado
+	•	🎬 Progressive card animations
+	•	🧠 Centralized global state
 
 
-## 🧱 Arquitetura
+## 🧱 Architecture
 
-O projeto foi organizado em módulos independentes, cada um com responsabilidade bem definida:
+The project is organized into independent modules, each with a well-defined responsibility:
+	•	api/ → Communication with the PokéAPI
+	•	state/ → Global state management
+	•	pokemon/ → Card rendering and animations
+	•	list/ → Pagination, search, and filters
+	•	modal/ → Navigation and detailed view logic
+	•	ui/ → Interface interactions
 
-- **api/** → comunicação com a PokéAPI  
-- **state/** → gerenciamento de estado global  
-- **pokemon/** → renderização de cards e animações  
-- **list/** → paginação, busca e filtros  
-- **modal/** → navegação e exibição detalhada  
-- **ui/** → interações de interface  
-
-Essa separação reduz acoplamento, melhora legibilidade e facilita manutenção.
-
-## 🔹 Gerenciamento de Estado
-
-Um store centraliza:
-	•	Lista completa de dados
-	•	Lista visível
-	•	Filtros ativos
-	•	Página atual
-	•	Estado do modal
-	•	Modo de visualização
-
-Isso evita dependências cruzadas e facilita manutenção.
+This separation reduces coupling, improves readability, and simplifies maintenance.
 
 
-## 🔹 Separação de Responsabilidades
-	•	Renderização não manipula estado.
-	•	Estado não manipula DOM.
-	•	UI não contém regra de negócio.
+## 🔹 State Management
 
-Essa divisão torna o projeto previsível e escalável.
+A centralized store handles:
+	•	Complete dataset
+	•	Visible list
+	•	Active filters
+	•	Current page
+	•	Modal state
+	•	View mode
+
+This approach avoids cross-dependencies and keeps the application predictable and maintainable.
 
 
-## 🛠 Tecnologias
+## 🔹 Separation of Concerns
+	•	Rendering does not manipulate state
+	•	State does not manipulate the DOM
+	•	UI does not contain business logic
+
+This layered structure keeps the codebase scalable and easier to reason about.
+
+
+## 🛠 Technologies
 	•	HTML5
-	•	CSS3 modularizado
+	•	Modular CSS3
 	•	JavaScript ES6+
 	•	Fetch API
 	•	PokéAPI
-	•	Vercel (Deploy)
+	•	Vercel (Deployment)
 
 
-## 📈 Pontos Técnicos Trabalhados
-	•	Manipulação performática de DOM (DocumentFragment)
-	•	Controle manual de estado (sem frameworks)
-	•	Estrutura modular baseada em responsabilidade
-	•	Tratamento de erros na camada de API
-	•	Deploy em ambiente real com debug de rede
+## 📈 Technical Highlights
+	•	Performant DOM manipulation using DocumentFragment
+	•	Manual state control (without frameworks)
+	•	Responsibility-based modular structure
+	•	API layer error handling
+	•	Real environment deployment with network debugging
 
 
-## 🚀 Próximos Passos
-	•	Implementação de testes unitários
-	•	Otimização de carregamento (lazy loading)
-	•	Refatoração para arquitetura baseada em componentes
+## 🚀 Next Steps
+	•	Unit test implementation
+	•	Loading optimization (lazy loading)
+	•	Refactor toward a component-based architecture
 
+<br>
 
-## 👨‍💻 Autor
+## 👨‍💻 Author
 
 Matheus Tavares
-Desenvolvedor Full Stack
+Front-End Developer
 
-## 
+##
